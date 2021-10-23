@@ -1,0 +1,57 @@
+#include <stdio.h>  
+
+void imprime(int); 
+void regreso(int);
+void imprimeizquierda(int);
+int main()          
+{
+int n=0;            
+printf("Indica el numero limite   ");   
+scanf("%d", &n);  
+imprimeizquierda(n); 
+imprime(n);        
+regreso(n);
+return 0;           
+}                   
+void imprime(int b) 
+{
+int a,c;            
+for(a=1; a<=b; a++)
+{
+    for(c=1; c<=a; c++)      
+        printf("%d", c);   
+ printf("\n");               
+}
+}
+void regreso(int n)
+{
+	int i,j; 
+	
+	for(i=n-1; i>=0; i--)
+	{
+		for (j=0; j<i; j++)
+		{
+			printf("%d", j+1);
+		}
+		printf("\n");
+	}
+}
+void imprimeizquierda(int n)
+{
+ int i,j,k,s;
+  
+ for(i=1;i<=n;i++){
+  for(k=n;k>i;k--)
+   printf(" ");
+   for(j=1;j<i+1;j++)
+   printf("%d",j);
+  printf("\n");
+ }
+ for(i=1;i<=n-1;i++){
+  for(k=1;k<i+1;k++)
+   printf(" ");
+   for(j=n;j>i;j--)
+   printf("%d",j);
+  printf("\n");
+ }
+}
