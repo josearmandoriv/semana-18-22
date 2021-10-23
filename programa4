@@ -1,0 +1,40 @@
+#include <stdio.h>  
+
+void imprime(int); 
+void regreso(int);
+int main()          
+{
+int n=0;            
+printf("Indica el numero limite   ");   
+scanf("%d", &n);   
+regreso(n);       
+imprime(n); 
+return 0;           
+}                   
+void imprime(int b) 
+{
+int a,c;            
+for(a=1; a<=b; a++)
+{
+    for(c=1; c<=a; c++)      
+        printf("%d", c);   
+ printf("\n");               
+}
+}
+void regreso(int n)
+{
+    int ast=1, esp=n-1; 
+	int ren, i,f;
+	  	
+	  	for(ren=1; ren<=n ; ren++) 
+	  	{
+		  for(i=1; i<=esp ; i++)  
+			printf(" ");
+		  
+		  for(f=1; f<=ast; f++) 
+			printf("%d",f);
+			printf("\n");
+			ast= ast+1; 
+			esp= esp-1;
+		}
+}
