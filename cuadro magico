@@ -1,0 +1,90 @@
+#include <conio.h>
+int cuadrado(int x);
+int main()
+{
+	int num,r;
+	{
+	printf("cuadro magico \n");
+	printf("Introduce un numero impar\n");
+	scanf("%d", &num);
+	if(num%2!=0)
+	{
+		cuadrado(num);
+	}
+	else
+	{
+		printf("El numero no es impar, intentalo nuevamente\n");
+	}	
+	}
+}
+int cuadrado(int x)
+{
+	int arreglo[50][50],y,aa,bb,med,numero,suma;	
+	med=(x/2);
+	med=med+1;
+	for(aa=1;aa<=x;aa++)
+	{
+		for(bb=1;bb<=x;bb++)
+		{
+			arreglo[aa][bb]=0;
+		}
+	}
+	for(aa=1,bb=med,numero=1;numero<=(x*x);)
+	{
+			if(bb<=x && aa>0)
+			{
+				if(arreglo[aa][bb]==0)
+				arreglo[aa][bb]=numero;
+				numero++;
+				aa--;
+				bb++;
+			}
+			if(aa<1 && bb>x)
+			{
+				aa=aa+2;
+				bb--;
+			}
+			if(aa<1)
+			{
+				aa=x;
+			}
+			if(bb>x)
+			{
+				bb=1;
+			 }
+			if(arreglo[aa][bb]!=0)
+			{
+				aa=aa+2;
+				bb--;
+			}
+	}
+	for(aa=1;aa<=x;aa++)
+	{
+		printf("\n");
+		for(bb=1;bb<=x;bb++)
+		{
+			if(arreglo[aa][bb]<10)
+			{
+				printf("%d    ",arreglo[aa][bb]);
+			}
+			if(arreglo[aa][bb]>=10 && arreglo[aa][bb]<100)
+			{
+				printf("%d   ",arreglo[aa][bb]);
+			}
+			if(arreglo[aa][bb]>=100 && arreglo[aa][bb]<1000)
+			{
+
+				printf("%d  ",arreglo[aa][bb]);
+			}
+			if(arreglo[aa][bb]>=1000 && arreglo [aa][bb]<10000)
+			{
+				printf("%d ",arreglo[aa][bb]);
+			}
+		}
+	}
+	suma=(x*(x*x+1)/2);
+	printf("\nLa suma de cada fila, columna y diagonal es de %d\n", suma);
+	system("pause");
+	system("cls");
+return 0;
+}
